@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async</title>
+    <script src="../../../node_modules/requirejs/require.js"></script>
+</head>
+<body>
+
+Hello from my module: <button id="hiButton">hi</button>
+
+<script>
+    require(["asyncModuleDep"], function(module) {
+        document.getElementById("hiButton").addEventListener("click", function() {
+            alert(module.hi());
+        });
+    });
+</script>
+</html>

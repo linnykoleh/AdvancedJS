@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async</title>
+    <script src="../../../node_modules/requirejs/require.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: '.',
+            paths: {
+                jquery: '../../../node_modules/jquery/src/jquery.js'
+            }
+        });
+
+        require(["asyncModule","jquery"], function(module,$) {
+            $("#hiButton").click(function() {
+                alert(module.hi());
+            });
+        });
+    </script>
+</head>
+<body>
+Hello from my module: <button id="hiButton">hi</button>
+</body>
+</html>

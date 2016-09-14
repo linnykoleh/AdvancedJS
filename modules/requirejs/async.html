@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async</title>
+    <script src="../../node_modules/requirejs/require.js"></script>
+</head>
+<body>
+
+<!-- npm install requirejs -->
+
+Hello from my module: <button id="hiButton">HI</button>
+
+Hello from my module: <button id="hiButton_2">HI 2</button>
+</body>
+<script>
+    require(["./asyncModule.js"], function(module) {
+        document.getElementById("hiButton").addEventListener("click", function() {
+            alert(module.hi());
+        });
+    });
+
+    document.getElementById("hiButton_2").addEventListener("click", function() {
+        require(["./asyncModule.js"], function(module) {
+            alert(module.hi());
+        });
+    });
+</script>
+</html>
