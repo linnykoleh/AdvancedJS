@@ -7,10 +7,18 @@ export class Employee extends Person{
         this.position = position;
     }
 
-    add(employee){
-         if(employee instanceof Employee){
-              hiddenEmployeesList.push(employee);
-        }
+    /* javascript Promise == java Future*/
+
+    bonus() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => resolve(Math.round(Math.random() * 1000)), 1000)
+        });
+    }
+
+    total (){
+        return new Promise((resolve, reject) => {
+            setTimeout(() => resolve(this.bonus().then(bonus => resolve(bonus + this.salary))), 1000)
+        });
     }
 
     getInfo(){

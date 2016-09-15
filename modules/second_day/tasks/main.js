@@ -1,9 +1,9 @@
 import {Employees} from "./Employees";
 import {Employee} from "./Employee";
 
-Employees.add(new Employee("John", "developer", 1000));
-Employees.add(new Employee("Bill", "manager", 5000));
-Employees.add(new Employee("James", "director", 4000));
+Employees.add(new Employee("John", 1000, "developer"));
+Employees.add(new Employee("Bill", 5000, "manager"));
+Employees.add(new Employee("James", 4000, "director"));
 
 let employees = Employees.list();
 
@@ -14,6 +14,17 @@ for(let e of employees){
 
 let avg = Employees.averageSalary();
 
+for(let e of employees){
+    e.total().then(total =>
+       /*Отработает когда вернется промис ответ, через 1 секунду*/
+        html += `$(e.name) total : $(total)`,
+        render()
+    );
+}
+
 html += `Average : $(avg) <br>`;
 
-document.getElementById("employees").innerHTML = html;
+function render() {
+    document.getElementById("employees").innerHTML = html;
+}
+render();
