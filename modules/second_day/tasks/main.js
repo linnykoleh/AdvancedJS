@@ -12,4 +12,8 @@ for(let e of employees){
     html += e.getInfo() + "<br>";
 }
 
+let avg = Employees.averageSalary();
+
+html += `Average : $(avg) <br>`;
+
 document.getElementById("employees").innerHTML = html;

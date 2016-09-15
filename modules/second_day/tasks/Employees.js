@@ -13,6 +13,10 @@ export class Employees{
     }
 
     static list(){
-        return [..._employees];
+        return [..._employees]; /* скопировать массив _employees*/
+    }
+
+    static averageSalary(){
+        return Math.round(_employees.map(e => e.salary).reduce((a,b) => a + b) / _employees.length);
     }
 }
