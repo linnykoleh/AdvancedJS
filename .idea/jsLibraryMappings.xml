@@ -3,5 +3,6 @@
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{AdvancedJS/node_modules}" />
     <file url="file://$PROJECT_DIR$/modules/gulp" libraries="{AdvancedJS/modules/gulp/node_modules}" />
+    <includedPredefinedLibrary name="ECMAScript 6" />
   </component>
 </project>
